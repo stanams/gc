@@ -1,0 +1,51 @@
+<div class="page-wrapper">
+
+  <div class="brand-name">
+    <img src="http://res.cloudinary.com/codehunt/image/upload/c_scale,w_120/v1461658809/logo_ubhtk5.png"
+         alt="Logo" />
+  </div>
+
+  <div class="auth-wrapper">
+
+      <h2 class="signup-title">Create an account <br> to redeem your Gift Cards</h2>
+
+
+      <!-- Error messages -->
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <ul>
+            <li class="flash-message-item"><%= error %></li>
+          </ul>
+        <% end %>
+      <% end %>
+
+      <form class="auth-form" action="/users" method="post">
+        <%= auth_token %>
+        <input class="input-field"
+               type="email"
+               required
+               name="user[email]"
+               id="email"
+               placeholder="Email"
+               value="<%= @user.nil? ? '' : "#{@user.email}"%>"
+               >
+        <br>
+        <br>
+        <input class="input-field"
+               type="password"
+               name="user[password]"
+               id="password"
+               placeholder="Password">
+        <br>
+        <br>
+
+        <input class="submit-button" type="submit" value="Sign Up">
+      </form>
+    </div>
+    <br>
+    <p class="auth-footer">
+      Already have an account? <%= link_to "Sign In!", new_session_url %>
+    </p>
+
+
+</div>

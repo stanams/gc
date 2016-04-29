@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+
+  <div class="brand-name">
+    <img src="http://res.cloudinary.com/codehunt/image/upload/c_scale,w_120/v1461658809/logo_ubhtk5.png" alt="The Atlantic" />
+  </div>
+
+  <div class="auth-wrapper">
+
+
+      <h2 class="signup-title">Welcome back! <br> Sign in to redeem a Gift Card</h2>
+
+      <!-- Error messages -->
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <ul>
+            <li class="flash-message-item"><%= error %></li>
+          </ul>
+        <% end %>
+      <% end %>
+
+
+      <form class="auth-form" action="/session" method="post">
+        <%= auth_token %>
+        <input class="input-field" type="text" name="user[email]" id="email" placeholder="Email" value="<%= @user.nil? ? '' : "#{@user.email}"%>">
+        <br>
+        <br>
+        <input class="input-field" type="password" name="user[password]" id="password" value="" placeholder="Password">
+        <br>
+        <br>
+        <input class="submit-button" type="submit" value="Sign In">
+      </form>
+      <br>
+      <p class="auth-footer">
+        Don't have an account yet? <%= link_to "Sign Up!", new_user_url %>
+      </p>
+
+
+  </div>
+</div>

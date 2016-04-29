@@ -1,0 +1,2 @@
+module RedemptionCardsHelper
+end

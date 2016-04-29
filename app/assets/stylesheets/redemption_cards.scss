@@ -1,0 +1,95 @@
+// Place all the styles related to the redemption_cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.logo-container {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.redeem-page-wrapper {
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.redeem-wrapper {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px #eee solid;
+  width: 400px;
+  height: 350px;
+  padding: 50px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+  box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+}
+
+.redeem-footer {
+  text-align: center;
+  margin: 20px;
+}
+
+.balance-archive-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  padding: 50px;
+}
+
+.balance-area {
+  font-size: 30px;
+}
+
+.history-area {
+  font-size: 20px;
+}
+
+.archive-table-head {
+  color: #A9A9A9;
+}
+
+.archive-table-cells {
+  padding: 10px;
+}
+
+// VALIDATION REDEEMED
+
+.fa-check-circle {
+  color: #5FCF80;
+}
+
+.validation-card-center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 60px;
+}
+
+.validation-button-checked {
+  border: 1px solid #5FCF80;
+  background: #F7F7F7;
+  color: #5FCF80;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 15px 40px;
+  transition: background 0.5s ease;
+  font-size: 18px;
+  font-family: Montserrat;
+}
+.validation-button-checked:hover {
+  color: white;
+  background: #5FCF80;
+  cursor: pointer;
+}

@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* ------ RESET CSS -------*/
+
+ /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+ a {
+   text-decoration: none !important;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+ }
+
+ body {
+   background-color: #F7F7F7;
+ }
+
+h1, h2, h3 {
+  font-family: Montserrat;
+}
+
+table {
+  font-family: Open Sans;
+}
+
+ h1 {
+  font-size: 40px;
+ }
+
+ h2 {
+  font-size: 30px;
+ }
+
+ h3 {
+   font-size: 20px;
+ }
+
+p, li {
+  font-family: Open Sans;
+  font-size: 16px;
+}
+
+.brand-name {
+  margin: 20px;
+}
+
+input:focus {
+  border-color: rgba(238, 238, 238, 0.8);
+  box-shadow: 0 1px 1px rgba(238, 238, 238, 0.075) inset, 0 0 8px rgba(238, 238, 238, 0.6);
+  outline: 0 none;
+}
+
+.separator {
+  border-top: solid 0.5px #A9A9A9;
+  border-bottom: solid 0.5px #EEE;
+  width: 400px;
+}
+
+ /* ------- AUTHENTICATION ------- */
+
+.page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.auth-wrapper {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px #eee solid;
+  width: 400px;
+  height: 350px;
+  padding: 50px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+  box-shadow: 0px 2px 5px -2px rgba(176,176,176,1);
+}
+
+.auth-form {
+  padding: 20px;
+  height: 300px;
+}
+
+.auth-footer {
+  font-size: 14px;
+  /*margin: 10px;*/
+}
+
+.signup-title {
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+.submit-button {
+  border: 1px solid #5FCF80;
+  background: white;
+  color: #5FCF80;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 15px 40px;
+  transition: background 0.5s ease;
+  font-size: 18px;
+  margin-top: 45px;
+}
+
+.submit-button:hover {
+  color: white;
+  background: #5FCF80;
+  cursor: pointer;
+}
+
+.input-field {
+  border-radius: 5px;
+  height: 40px;
+  width: 250px;
+  border: 1px #eee solid;
+  padding: 0 10px 0 10px;
+}
+
+
+/* ------- FLASH MESSAGES ------- */
+
+.flash-message-item {
+  font-size: 14px;
+  color: #E02E46;
+}
+
+.login-as {
+  text-align: center;
+  margin: 20px;
+}

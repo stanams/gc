@@ -1,0 +1,74 @@
+<nav class="logo-container">
+  <img class="logo-center" src="http://res.cloudinary.com/codehunt/image/upload/c_scale,w_120/v1461658809/logo_ubhtk5.png" alt="The Atlantic" />
+</nav>
+<p class="login-as">
+  You're logged in as: <%= current_user.email %>
+</p>
+<div class="redeem-page-wrapper">
+
+  <div class="redeem-wrapper">
+
+
+      <h2 class="redeem-title">Redeem your gift card!</h2>
+
+      <!-- Error messages -->
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <ul>
+            <li class="flash-message-item"><%= error %></li>
+          </ul>
+        <% end %>
+      <% elsif flash[:success]%>
+          <% flash[:success].each do |notice| %>
+            <ul>
+              <li class="flash-message-item"><%= notice %></li>
+            </ul>
+          <% end %>
+      <% end %>
+
+      <form class="" action="/redemption_cards/check" method="post">
+        <%= auth_token %>
+        <input title='You must enter a 16 character code' pattern='.{16}' required class="input-field" type="text" name="redemption_card[card_code]" id="card-code" placeholder="Enter your 16 digits card code" value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>">
+        <br>
+        <br>
+        <input title='You must enter 4 digits pin' pattern='\d{4}' required class="input-field" type="text" name="redemption_card[card_pin]" id="card-Pin" value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>" placeholder="Enter your 4 digits pin">
+        <br>
+        <br>
+        <input class="submit-button" type="submit" value="Redeem!">
+      </form>
+
+  </div>
+
+  <div class="balance-archive-wrapper">
+    <p class="balance-area">
+      Your balance is currently: $<%= current_user.balance %>
+    </p>
+    <div class="separator">
+    </div>
+
+    <p class="history-area">
+      Your history:
+    </p>
+
+    <table class="archive-table">
+      <tr class="archive-table-rows">
+        <th class="archive-table-head"># Gift Card</th>
+        <th class="archive-table-head">Date</th>
+        <th class="archive-table-head">Receiver</th>
+        <th class="archive-table-head">Amount</th>
+      </tr>
+      <% @last_used_redemption_cards.each do |c| %>
+        <tr class="archive-table-rows">
+          <th class="archive-table-cells"><%= c.card_code %></th>
+          <th class="archive-table-cells"><%= c.used_at.to_s[0..15] %></th>
+          <th class="archive-table-cells"><%= c.user.email %></th>
+          <th class="archive-table-cells"><%= c.amount %></th>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>
+<p class="redeem-footer">
+  <%= link_to "Logout", session_url, method: :delete %>
+</p>

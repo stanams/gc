@@ -1,0 +1,21 @@
+<nav class="logo-container">
+  <img class="logo-center" src="http://res.cloudinary.com/codehunt/image/upload/c_scale,w_120/v1461658809/logo_ubhtk5.png" alt="The Atlantic" />
+</nav>
+<p class="login-as">
+  You're logged in as: <%= current_user.email %>
+</p>
+
+<div class="validation-card-center">
+  <h2>
+    A Gift Card of $<%= @redemption_card.amount %> has been redeemed to <%= current_user.email %>
+  </h2>
+  <br>
+  <h3>
+    Your balance is now: $<%= current_user.balance %>
+  </h3>
+  <br>
+  <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+  <br>
+  <br>
+  <%= link_to "Got it!", check_form_redemption_cards_url, class: "validation-button-checked" %>
+</div>
