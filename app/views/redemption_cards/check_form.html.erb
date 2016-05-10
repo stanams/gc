@@ -28,10 +28,26 @@
 
       <form class="" action="/redemption_cards/check" method="post">
         <%= auth_token %>
-        <input title='You must enter a 16 character code' pattern='.{16}' required class="input-field" type="text" name="redemption_card[card_code]" id="card-code" placeholder="Enter your 16 digits card code" value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>">
+        <input title='You must enter a 16 character code'
+               pattern='.{16}'
+               required class="input-field"
+               type="text"
+               name="redemption_card[card_code]"
+               id="card-code"
+               placeholder="Enter your 16 digits card code"
+               value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>"
+               >
         <br>
         <br>
-        <input title='You must enter 4 digits pin' pattern='\d{4}' required class="input-field" type="text" name="redemption_card[card_pin]" id="card-Pin" value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>" placeholder="Enter your 4 digits pin">
+        <input title='You must enter 4 digits pin'
+               pattern='\d{4}'
+               required class="input-field"
+               type="text"
+               name="redemption_card[card_pin]"
+               id="card-Pin"
+               placeholder="Enter your 4 digits pin"
+               value="<%= @redemption_card.nil? ? '' : "#{@redemption_card.card_code}"%>"
+               >
         <br>
         <br>
         <input class="submit-button" type="submit" value="Redeem!">
